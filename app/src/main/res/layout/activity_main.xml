@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/pcm_to_aac"
+        android:text="pcmToAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="convertToAcc"
+        />
+
+    <Button
+        android:id="@+id/aac_to_pcm"
+        android:text="aacToPCM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/pcm_to_aac"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="convertToPcm"
+        />
+
+    <Button
+        android:id="@+id/native_pcm_to_aac"
+        android:text="native_pcm_aac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/aac_to_pcm"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="nativeToAAC"
+        />
+
+    <Button
+        android:id="@+id/native_aac_to_pcm"
+        android:text="native_aac_pcm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/native_pcm_to_aac"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="nativeToPcm"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
