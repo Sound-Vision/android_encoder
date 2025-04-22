@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         context = application
     }
 
-    external fun nativeEncode(assetManager: AssetManager, dest: String): Int
-
+    private external fun nativeEncode(assetManager: AssetManager, dest: String): Int
+    private external fun nativeDecode(src: String, dest: String):Int
     companion object {
         // Used to load the 'audio_encoder' library on application startup.
         init {
@@ -52,6 +52,14 @@ class MainActivity : AppCompatActivity() {
         CoroutineScope (Dispatchers.Default).launch {
             val file = File(application.filesDir, "native_haidao.aac")
             nativeEncode(assets, file.path)
+        }
+    }
+
+    fun nativeToPcm(view: View) {
+        CoroutineScope (Dispatchers.Default).launch {
+            val src = File(application.filesDir, "native_haidao.aac")
+            val dest = File(application.filesDir, "native_haidao.pcm")
+            nativeDecode(src.path, dest.path)
         }
     }
 
